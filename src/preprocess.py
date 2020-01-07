@@ -66,6 +66,9 @@ if __name__ == '__main__':
     parser.add_argument('-dataset', default='')
 
     parser.add_argument('-n_cpus', default=2, type=int)
+    
+    parser.add_argument('-only_test', type=str2bool, nargs='?', const=True, default=False)
+    parser.add_argument('-override_pt', type=str2bool, nargs='?', const=True, default=False)
 
 
     args = parser.parse_args()

@@ -184,7 +184,7 @@ class Translator(object):
         self.gold_out_file.close()
         self.src_out_file.close()
 
-        if (step != -1):
+        if (step != -1 and self.args.report_rouge):
             rouges = self._report_rouge(gold_path, can_path)
             self.logger.info('Rouges at step %d \n%s' % (step, rouge_results_to_str(rouges)))
             if self.tensorboard_writer is not None:
